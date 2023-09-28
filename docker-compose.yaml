@@ -1,0 +1,30 @@
+version: '3' #Docker-compose version
+
+# sudo docker build --tag first_docker_a_flask_app .
+services: # Lista de servicios
+  flask_app: #servicio/app de flask
+    build: # Lista de parámetros desde los cuales construir
+      context: . #contexto
+      dockerfile: Dockerfile #archivo de Dockerfile
+
+
+# sudo docker build --tag first_docker_a_flask_app .
+# es reemplazado por docker-compose build
+
+# docker run -d -p 5005:5005 first_docker_a_flask_app
+# es reemplazado por docker-compose up
+    ports: #puerto contenedor:puerto host
+      - "5005:5005"
+    restart: always #en caso de error o falla
+    volumes:
+      - .:/docker-compose+git # PathHost:PathContainer
+#  mysql_db:
+
+
+#BUILDEO DE CONTENEDOR
+# sudo docker build --tag first_docker_a_flask_app .
+
+#CORRER EL CONTENDOR
+#- sudo docker run -d -p 5005:5005 first_docker_a_flask_app
+
+# Se reemplaza por docker-compose up y docker-compose up -d
