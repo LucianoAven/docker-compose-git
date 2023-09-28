@@ -1,0 +1,9 @@
+docker ps -> listar contenedores corriendo
+
+docker ps -a -> listar contenedores
+
+docker stop id -> parar docker especifico
+
+docker remove id -> borrar docker especifico (tiene que estar parado antes)
+
+docker exec -it nombreDocker bash -> abre la consola dentro del docker
